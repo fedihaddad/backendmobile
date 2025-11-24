@@ -1,5 +1,6 @@
 tensorflow-cpu==2.11.0
 keras==2.11.0
-numpy
+# Pin NumPy to a 1.x release compatible with TF 2.11
+numpy==1.23.5
 Pillow
 h5py

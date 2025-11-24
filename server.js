@@ -346,6 +346,56 @@ app.get('/api/analyze', (req, res) => {
     });
 });
 
+// Model status endpoint: reports whether model/class files exist and optionally attempts a quick TensorFlow import check
+app.get('/api/model/status', async (req, res) => {
+    try {
+        const modelExists = fs.existsSync(MODEL_LOCAL_PATH);
+        const classExists = fs.existsSync(CLASS_LOCAL_PATH);
+        const modelStat = modelExists ? fs.statSync(MODEL_LOCAL_PATH) : null;
+
+        // Try a quick Python/TensorFlow import check (fast diagnostic)
+        let pyCheck = { ok: false, output: null, error: null };
+        const pythonCandidates = ['python', 'python3', 'py'];
+        function findPythonCmd() {
+            for (const cmd of pythonCandidates) {
+                try {
+                    const result = spawnSync(cmd, ['--version'], { encoding: 'utf8' });
+                    if (result.status === 0) return cmd;
+                } catch (e) {}
+            }
+            return null;
+        }
+
+        const pythonCmd = findPythonCmd();
+        if (pythonCmd) {
+            try {
+                const check = spawnSync(pythonCmd, ['-c', "import tensorflow as tf; print('TF_OK', tf.__version__)"], { encoding: 'utf8', timeout: 20 * 1000 });
+                pyCheck.output = (check.stdout || '').trim();
+                pyCheck.error = (check.stderr || '').trim();
+                pyCheck.ok = check.status === 0;
+            } catch (e) {
+                pyCheck.error = String(e);
+            }
+        } else {
+            pyCheck.error = 'No python executable found in PATH';
+        }
+
+        res.json({
+            success: true,
+            data: {
+                modelFile: MODEL_LOCAL_PATH,
+                modelExists,
+                modelStat: modelStat ? { size: modelStat.size, mtime: modelStat.mtime } : null,
+                classFile: CLASS_LOCAL_PATH,
+                classExists,
+                pythonCheck: pyCheck,
+            }
+        });
+    } catch (e) {
+        res.status(500).json({ success: false, error: String(e) });
+    }
+});
+
 // Analyze a bundled sample image (useful for quick web testing)
 // Place a file named `sample.jpg` in the backend folder to use this.
 app.get('/api/analyze/sample', (req, res) => {
