@@ -4,8 +4,11 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-MODEL_PATH = "plant_classifier.h5"
-CLASS_PATH = "class_names.txt"
+import os
+
+# Allow overriding model and class filenames via environment variables.
+MODEL_PATH = os.environ.get('MODEL_FILE', 'plant_classifier.h5')
+CLASS_PATH = os.environ.get('CLASS_FILE', 'class_names.txt')
 
 
 def load_model_with_fallback(model_path):
@@ -67,9 +70,22 @@ def load_model_with_fallback(model_path):
 
 
 # Load model ONCE (with fallbacks)
+# If MODEL_PATH doesn't exist but there is another .h5 file (e.g. trained_modeule.h5), use it.
+if not os.path.exists(MODEL_PATH):
+    candidates = [p for p in os.listdir('.') if p.lower().endswith('.h5')]
+    if candidates:
+        print(f"MODEL_PATH {MODEL_PATH} not found; using first .h5 candidate: {candidates[0]}")
+        MODEL_PATH = candidates[0]
+
 model = load_model_with_fallback(MODEL_PATH)
 
-# Load class names
+# Load class names (fallback to any .txt if configured name not found)
+if not os.path.exists(CLASS_PATH):
+    candidates = [p for p in os.listdir('.') if p.lower().endswith('.txt')]
+    if candidates:
+        print(f"CLASS_PATH {CLASS_PATH} not found; using first .txt candidate: {candidates[0]}")
+        CLASS_PATH = candidates[0]
+
 with open(CLASS_PATH, "r") as f:
     class_names = [line.strip() for line in f.readlines()]
 

@@ -9,6 +9,62 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// If MODEL_URL or CLASS_URL are provided in the environment, download them at startup
+const MODEL_URL = process.env.MODEL_URL || null;
+const CLASS_URL = process.env.CLASS_URL || null;
+const MODEL_FILENAME = process.env.MODEL_FILE || 'plant_classifier.h5';
+const CLASS_FILENAME = process.env.CLASS_FILE || 'class_names.txt';
+const MODEL_LOCAL_PATH = path.join(__dirname, MODEL_FILENAME);
+const CLASS_LOCAL_PATH = path.join(__dirname, CLASS_FILENAME);
+
+const http = require('http');
+const https = require('https');
+
+function downloadFile(url, dest) {
+    return new Promise((resolve, reject) => {
+        const client = url.startsWith('https') ? https : http;
+        const file = fs.createWriteStream(dest);
+        const req = client.get(url, (res) => {
+            if (res.statusCode >= 400) {
+                return reject(new Error('Failed to download file: ' + res.statusCode));
+            }
+            res.pipe(file);
+            file.on('finish', () => file.close(resolve));
+        });
+        req.on('error', (err) => {
+            fs.unlink(dest, () => {});
+            reject(err);
+        });
+        file.on('error', (err) => {
+            fs.unlink(dest, () => {});
+            reject(err);
+        });
+    });
+}
+
+async function ensureModelFiles() {
+    try {
+        if (MODEL_URL) {
+            console.log('MODEL_URL provided, downloading model from', MODEL_URL);
+            await downloadFile(MODEL_URL, MODEL_LOCAL_PATH);
+            console.log('Model downloaded to', MODEL_LOCAL_PATH);
+        } else if (!fs.existsSync(MODEL_LOCAL_PATH)) {
+            console.warn('No MODEL_URL provided and local model not found at', MODEL_LOCAL_PATH);
+        }
+
+        if (CLASS_URL) {
+            console.log('CLASS_URL provided, downloading class names from', CLASS_URL);
+            await downloadFile(CLASS_URL, CLASS_LOCAL_PATH);
+            console.log('Class names downloaded to', CLASS_LOCAL_PATH);
+        } else if (!fs.existsSync(CLASS_LOCAL_PATH)) {
+            console.warn('No CLASS_URL provided and local class_names.txt not found at', CLASS_LOCAL_PATH);
+        }
+    } catch (e) {
+        console.error('Failed to ensure model files:', e);
+        // Do not crash the server here; let predict.py handle missing model gracefully later.
+    }
+}
+
 // Debug: keep uploaded files for inspection when true
 const KEEP_UPLOADS = true;
 
@@ -446,14 +502,17 @@ app.post('/api/analyze', upload.single('image'), (req, res) => {
     });
 });
 
-// Start Server
-app.listen(PORT, () => {
-    console.log(`Backend server running on http://localhost:${PORT}`);
-    console.log(`API Endpoints:`);
-    console.log(` - GET  /api/sensors`);
-    console.log(` - GET  /api/pump/status`);
-    console.log(` - POST /api/pump`);
-    console.log(`IoT Endpoints:`);
-    console.log(` - POST /api/iot/sensors`);
-    console.log(` - GET  /api/iot/pump`);
-});
+// Start Server after ensuring model files (if provided)
+(async () => {
+    await ensureModelFiles();
+    app.listen(PORT, () => {
+        console.log(`Backend server running on http://localhost:${PORT}`);
+        console.log(`API Endpoints:`);
+        console.log(` - GET  /api/sensors`);
+        console.log(` - GET  /api/pump/status`);
+        console.log(` - POST /api/pump`);
+        console.log(`IoT Endpoints:`);
+        console.log(` - POST /api/iot/sensors`);
+        console.log(` - GET  /api/iot/pump`);
+    });
+})();
