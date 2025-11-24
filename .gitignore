@@ -1,0 +1,13 @@
+node_modules/
+uploads/
+plant_classifier.h5
+class_names.txt
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+dist/
+build/
+.DS_Store
+/*.log
