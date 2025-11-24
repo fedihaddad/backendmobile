@@ -12,7 +12,8 @@ const PORT = process.env.PORT || 3000;
 // If MODEL_URL or CLASS_URL are provided in the environment, download them at startup
 const MODEL_URL = process.env.MODEL_URL || null;
 const CLASS_URL = process.env.CLASS_URL || null;
-const MODEL_FILENAME = process.env.MODEL_FILE || 'plant_classifier.h5';
+// Default model filename set to 'trained_model.h5' per user request
+const MODEL_FILENAME = process.env.MODEL_FILE || 'trained_model.h5';
 const CLASS_FILENAME = process.env.CLASS_FILE || 'class_names.txt';
 const MODEL_LOCAL_PATH = path.join(__dirname, MODEL_FILENAME);
 const CLASS_LOCAL_PATH = path.join(__dirname, CLASS_FILENAME);

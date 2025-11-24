@@ -7,7 +7,7 @@ from PIL import Image
 import os
 
 # Allow overriding model and class filenames via environment variables.
-MODEL_PATH = os.environ.get('MODEL_FILE', 'plant_classifier.h5')
+MODEL_PATH = os.environ.get('MODEL_FILE', 'trained_model.h5')
 CLASS_PATH = os.environ.get('CLASS_FILE', 'class_names.txt')
 
 
