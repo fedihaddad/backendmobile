@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Notifications UI</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .note { border: 1px solid #ddd; padding: 10px; margin-bottom: 8px; display:flex; gap:10px; align-items:center }
+    .time { color: #666; font-size: 12px }
+    img { max-width: 160px; max-height: 120px; object-fit:cover; border:1px solid #ccc }
+  </style>
+</head>
+<body>
+  <h1>Notifications (history + live)</h1>
+  <div id="status">Connecting...</div>
+  <div id="list"></div>
+
+  <script>
+    const listEl = document.getElementById('list');
+    const statusEl = document.getElementById('status');
+
+    function renderNote(note) {
+      const d = document.createElement('div');
+      d.className = 'note';
+      const left = document.createElement('div');
+      if (note.image_url) {
+        const img = document.createElement('img');
+        img.src = note.image_url;
+        left.appendChild(img);
+      }
+      const meta = document.createElement('div');
+      meta.innerHTML = `<div><strong>${note.event}</strong> - <span class="time">${new Date(note.timestamp).toLocaleString()}</span></div><div>camera: ${note.camera}</div>`;
+      d.appendChild(left);
+      d.appendChild(meta);
+      return d;
+    }
+
+    async function loadHistory() {
+      try {
+        const r = await fetch('/api/notifications');
+        const j = await r.json();
+        if (j && j.data) {
+          listEl.innerHTML = '';
+          // Show newest first
+          const arr = j.data.slice().reverse();
+          arr.forEach(n => listEl.appendChild(renderNote(n)));
+        }
+      } catch (e) {
+        statusEl.textContent = 'Failed loading history: ' + e;
+      }
+    }
+
+    loadHistory();
+
+    // SSE
+    if (typeof EventSource !== 'undefined') {
+      const es = new EventSource('/api/notifications/stream');
+      es.onopen = () => { statusEl.textContent = 'Live connected'; };
+      es.onerror = (e) => { statusEl.textContent = 'SSE error'; };
+      es.onmessage = (ev) => {
+        try {
+          const note = JSON.parse(ev.data);
+          // prepend
+          const el = renderNote(note);
+          listEl.insertBefore(el, listEl.firstChild);
+        } catch (e) {
+          console.error('Bad SSE payload', ev.data);
+        }
+      };
+    } else {
+      statusEl.textContent = 'EventSource not supported by this browser.';
+    }
+  </script>
+</body>
+</html>

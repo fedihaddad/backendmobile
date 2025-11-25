@@ -1,0 +1,11 @@
+[
+  {
+    "id": "u-1764076641178-lnzx9d",
+    "name": "Fedi haddad",
+    "email": "fedihaddad76@gmail.com",
+    "passwordHash": "$2a$10$UY/dqSvsPCyov9R.L703ke.tJPsk/DuMP4PZHFnLNX.duloiTRbSq",
+    "pinHash": "$2a$10$KwfyLFrETIZRPlxnDkjafelwjcOpyRVyTGEfc3P.C0wb9GfzzOomq",
+    "pinFailedAttempts": 0,
+    "pinLockedUntil": null
+  }
+]
