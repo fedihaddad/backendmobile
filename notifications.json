@@ -479,5 +479,1465 @@
       "camera": "raspberry_pi",
       "image_url": "https://cdn.discordapp.com/attachments/1442848301220237426/1442860063998869645/snapshot.jpg?ex=6926f7a6&is=6925a626&hm=6f6cd0c2e7d1686dc71ce3ba6525835af17df0ac9ed9854e298e92e11dc10cf9&"
     }
+  },
+  {
+    "id": "n-1764155653231",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:14:25.433662Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198201283739679/snapshot.jpg?ex=69283290&is=6926e110&hm=ed3b2517db9163c9992aa3a568a572aa513f40241b7bc077ac8cbcf2ef6a395d&",
+    "temperature": 0,
+    "humidity": 0,
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:14:25.433662Z",
+      "temperature": 0,
+      "humidity": 0,
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198201283739679/snapshot.jpg?ex=69283290&is=6926e110&hm=ed3b2517db9163c9992aa3a568a572aa513f40241b7bc077ac8cbcf2ef6a395d&"
+    }
+  },
+  {
+    "id": "n-1764155679135",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:14:51.341574Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198308653731930/snapshot.jpg?ex=692832aa&is=6926e12a&hm=8000b890a10819bd20b7334fee31e56f8a2b1b1e20e04764f56f6904426aa10b&",
+    "temperature": 0,
+    "humidity": 0,
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:14:51.341574Z",
+      "temperature": 0,
+      "humidity": 0,
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198308653731930/snapshot.jpg?ex=692832aa&is=6926e12a&hm=8000b890a10819bd20b7334fee31e56f8a2b1b1e20e04764f56f6904426aa10b&"
+    }
+  },
+  {
+    "id": "n-1764155695115",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:15:07.324813Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198376534605885/snapshot.jpg?ex=692832ba&is=6926e13a&hm=46fe87cde03fce09ed44fea6a41fbdf04e16466fbbd6733345c31f2d648b9772&",
+    "temperature": 0,
+    "humidity": 0,
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:15:07.324813Z",
+      "temperature": 0,
+      "humidity": 0,
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198376534605885/snapshot.jpg?ex=692832ba&is=6926e13a&hm=46fe87cde03fce09ed44fea6a41fbdf04e16466fbbd6733345c31f2d648b9772&"
+    }
+  },
+  {
+    "id": "n-1764155699832",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:15:12.034106Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198395769683978/snapshot.jpg?ex=692832be&is=6926e13e&hm=64973b5f698b8615fc50aba165e6694fa38ca681bbf6a2babb5740ac3ee76684&",
+    "temperature": 0,
+    "humidity": 0,
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:15:12.034106Z",
+      "temperature": 0,
+      "humidity": 0,
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198395769683978/snapshot.jpg?ex=692832be&is=6926e13e&hm=64973b5f698b8615fc50aba165e6694fa38ca681bbf6a2babb5740ac3ee76684&"
+    }
+  },
+  {
+    "id": "n-1764155705252",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:15:17.457706Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198417470885979/snapshot.jpg?ex=692832c4&is=6926e144&hm=899641c70dc65acd67e07eaf13b8988cc9b3279f6266cb34689007f31698d4fa&",
+    "temperature": 0,
+    "humidity": 0,
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:15:17.457706Z",
+      "temperature": 0,
+      "humidity": 0,
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198417470885979/snapshot.jpg?ex=692832c4&is=6926e144&hm=899641c70dc65acd67e07eaf13b8988cc9b3279f6266cb34689007f31698d4fa&"
+    }
+  },
+  {
+    "id": "n-1764155709753",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:15:21.960884Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198438022840330/snapshot.jpg?ex=692832c8&is=6926e148&hm=5247acc5b97a66f80b54d120016eb5e7cbe5ee2c074415641af890066d749228&",
+    "temperature": 0,
+    "humidity": 0,
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:15:21.960884Z",
+      "temperature": 0,
+      "humidity": 0,
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198438022840330/snapshot.jpg?ex=692832c8&is=6926e148&hm=5247acc5b97a66f80b54d120016eb5e7cbe5ee2c074415641af890066d749228&"
+    }
+  },
+  {
+    "id": "n-1764155718869",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:15:31.077886Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198477449433088/snapshot.jpg?ex=692832d2&is=6926e152&hm=65b69a325d632daced7eaa7bb2e2172075063a3130f681dc91faebb96edd849b&",
+    "temperature": 0,
+    "humidity": 0,
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:15:31.077886Z",
+      "temperature": 0,
+      "humidity": 0,
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198477449433088/snapshot.jpg?ex=692832d2&is=6926e152&hm=65b69a325d632daced7eaa7bb2e2172075063a3130f681dc91faebb96edd849b&"
+    }
+  },
+  {
+    "id": "n-1764155724397",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:15:36.608451Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198500803182592/snapshot.jpg?ex=692832d7&is=6926e157&hm=96f40dab010a906d070eafb4eaf9a47fe6dad512e6421655e3c6390118d89368&",
+    "temperature": 0,
+    "humidity": 0,
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:15:36.608451Z",
+      "temperature": 0,
+      "humidity": 0,
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198500803182592/snapshot.jpg?ex=692832d7&is=6926e157&hm=96f40dab010a906d070eafb4eaf9a47fe6dad512e6421655e3c6390118d89368&"
+    }
+  },
+  {
+    "id": "n-1764155729829",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:15:42.039809Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198522039210116/snapshot.jpg?ex=692832dc&is=6926e15c&hm=f0ebe84b7b37162600e09cc0dcd77a82f2f4d46adefa61eb551189e2e1e5520f&",
+    "temperature": 0,
+    "humidity": 0,
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:15:42.039809Z",
+      "temperature": 0,
+      "humidity": 0,
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443198522039210116/snapshot.jpg?ex=692832dc&is=6926e15c&hm=f0ebe84b7b37162600e09cc0dcd77a82f2f4d46adefa61eb551189e2e1e5520f&"
+    }
+  },
+  {
+    "id": "n-1764155989521",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:20:01.738285Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443199608565006357/snapshot.jpg?ex=692833e0&is=6926e260&hm=e5c45d9759f89be281adae19bd6029a9d39b412da2cb92b2c66c0c8db16262e5&",
+    "temperature": 0,
+    "humidity": 0,
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:20:01.738285Z",
+      "temperature": 0,
+      "humidity": 0,
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443199608565006357/snapshot.jpg?ex=692833e0&is=6926e260&hm=e5c45d9759f89be281adae19bd6029a9d39b412da2cb92b2c66c0c8db16262e5&"
+    }
+  },
+  {
+    "id": "n-1764156207742",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:23:39.959250Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200527960772769/snapshot.jpg?ex=692834bb&is=6926e33b&hm=5e49977e207f24f0b15890bbea83c4935865cd3ee7c19eae1e1f51025739d2b2&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:23:39.959250Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200527960772769/snapshot.jpg?ex=692834bb&is=6926e33b&hm=5e49977e207f24f0b15890bbea83c4935865cd3ee7c19eae1e1f51025739d2b2&"
+    }
+  },
+  {
+    "id": "n-1764156214903",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:23:47.120981Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200557899841637/snapshot.jpg?ex=692834c2&is=6926e342&hm=b29475904d824ac0646fc997134e116f10f20de09a6fe859ae3693cfa64a94b8&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:23:47.120981Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200557899841637/snapshot.jpg?ex=692834c2&is=6926e342&hm=b29475904d824ac0646fc997134e116f10f20de09a6fe859ae3693cfa64a94b8&"
+    }
+  },
+  {
+    "id": "n-1764156220025",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:23:52.244071Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200579491987537/snapshot.jpg?ex=692834c7&is=6926e347&hm=576801b56a761f5cc2051c23ea3c015468b48f97d5ae2be75dc16dae92c3d06c&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:23:52.244071Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200579491987537/snapshot.jpg?ex=692834c7&is=6926e347&hm=576801b56a761f5cc2051c23ea3c015468b48f97d5ae2be75dc16dae92c3d06c&"
+    }
+  },
+  {
+    "id": "n-1764156224939",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:23:57.158300Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200600039886911/snapshot.jpg?ex=692834cc&is=6926e34c&hm=47aa89398f3b8748146ecc649e8588a79cdf66f5d9ebd5db427a30de25c9ce8d&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:23:57.158300Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200600039886911/snapshot.jpg?ex=692834cc&is=6926e34c&hm=47aa89398f3b8748146ecc649e8588a79cdf66f5d9ebd5db427a30de25c9ce8d&"
+    }
+  },
+  {
+    "id": "n-1764156230264",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:24:02.481139Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200621963645008/snapshot.jpg?ex=692834d1&is=6926e351&hm=f48716f6f2461c3246be6fce65027c2bdf00b7312c1db710b369f77d45b343a0&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:24:02.481139Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200621963645008/snapshot.jpg?ex=692834d1&is=6926e351&hm=f48716f6f2461c3246be6fce65027c2bdf00b7312c1db710b369f77d45b343a0&"
+    }
+  },
+  {
+    "id": "n-1764156235489",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:24:07.707658Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200644000256030/snapshot.jpg?ex=692834d6&is=6926e356&hm=44bf70baac2ac68cd82a5c475566d800356f242cf6ea3aef7dc5b0a130431305&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:24:07.707658Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200644000256030/snapshot.jpg?ex=692834d6&is=6926e356&hm=44bf70baac2ac68cd82a5c475566d800356f242cf6ea3aef7dc5b0a130431305&"
+    }
+  },
+  {
+    "id": "n-1764156240824",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:24:13.040941Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200664757862420/snapshot.jpg?ex=692834db&is=6926e35b&hm=09cbbbe555274c09da8fc213452f1fcb5886356340a376bddd357050e2c56118&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:24:13.040941Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443200664757862420/snapshot.jpg?ex=692834db&is=6926e35b&hm=09cbbbe555274c09da8fc213452f1fcb5886356340a376bddd357050e2c56118&"
+    }
+  },
+  {
+    "id": "n-1764156583457",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:29:55.668821Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202101630078977/snapshot.jpg?ex=69283632&is=6926e4b2&hm=ef2628a17b8f9e03fac80411c083f988c9d98ea314e6d843822b24927abdd0c1&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:29:55.668821Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202101630078977/snapshot.jpg?ex=69283632&is=6926e4b2&hm=ef2628a17b8f9e03fac80411c083f988c9d98ea314e6d843822b24927abdd0c1&"
+    }
+  },
+  {
+    "id": "n-1764156587852",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:30:00.066782Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202122555461693/snapshot.jpg?ex=69283637&is=6926e4b7&hm=d7cc6b680230cff614e7963295e8333d7f03067fe51a1781653eb082f900777b&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:30:00.066782Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202122555461693/snapshot.jpg?ex=69283637&is=6926e4b7&hm=d7cc6b680230cff614e7963295e8333d7f03067fe51a1781653eb082f900777b&"
+    }
+  },
+  {
+    "id": "n-1764156592973",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:30:05.185973Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202143812325466/snapshot.jpg?ex=6928363c&is=6926e4bc&hm=ae88cfc922fd5a10f3ed11ace8de13261e0a4a23556d0acc78b54b2dae2cd281&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:30:05.185973Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202143812325466/snapshot.jpg?ex=6928363c&is=6926e4bc&hm=ae88cfc922fd5a10f3ed11ace8de13261e0a4a23556d0acc78b54b2dae2cd281&"
+    }
+  },
+  {
+    "id": "n-1764156598400",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:30:10.613076Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202164892762282/snapshot.jpg?ex=69283641&is=6926e4c1&hm=4c55b82d228c0b15f9d69908d0ae630f6a9cf005ab66f67e1b33316cb3757f6a&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:30:10.613076Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202164892762282/snapshot.jpg?ex=69283641&is=6926e4c1&hm=4c55b82d228c0b15f9d69908d0ae630f6a9cf005ab66f67e1b33316cb3757f6a&"
+    }
+  },
+  {
+    "id": "n-1764156603212",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:30:15.425840Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202186468134993/snapshot.jpg?ex=69283646&is=6926e4c6&hm=4bde936726537ac940a6decf44cc6eb5d33863e78e5e4e3de9a0dceaa845d8e3&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:30:15.425840Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202186468134993/snapshot.jpg?ex=69283646&is=6926e4c6&hm=4bde936726537ac940a6decf44cc6eb5d33863e78e5e4e3de9a0dceaa845d8e3&"
+    }
+  },
+  {
+    "id": "n-1764156608436",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:30:20.647882Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202207863275541/snapshot.jpg?ex=6928364b&is=6926e4cb&hm=49e0a5059ddc903791e1e8a6d26838d4e843b8a1f07208769a1c621b83bdc3a8&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:30:20.647882Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202207863275541/snapshot.jpg?ex=6928364b&is=6926e4cb&hm=49e0a5059ddc903791e1e8a6d26838d4e843b8a1f07208769a1c621b83bdc3a8&"
+    }
+  },
+  {
+    "id": "n-1764156613659",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:30:25.871713Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202229535244380/snapshot.jpg?ex=69283650&is=6926e4d0&hm=e818661cf0112546dc7552d07a6522416fcf5160e49903032c08ce55296ccf10&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:30:25.871713Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202229535244380/snapshot.jpg?ex=69283650&is=6926e4d0&hm=e818661cf0112546dc7552d07a6522416fcf5160e49903032c08ce55296ccf10&"
+    }
+  },
+  {
+    "id": "n-1764156618470",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:30:30.684118Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202250825793566/snapshot.jpg?ex=69283655&is=6926e4d5&hm=9a5b8f44adcdd68f1e25b9f4a84d03524f53770af68be902ccec0572dfca7f22&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:30:30.684118Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202250825793566/snapshot.jpg?ex=69283655&is=6926e4d5&hm=9a5b8f44adcdd68f1e25b9f4a84d03524f53770af68be902ccec0572dfca7f22&"
+    }
+  },
+  {
+    "id": "n-1764156626165",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:30:38.375706Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202278390501396/snapshot.jpg?ex=6928365c&is=6926e4dc&hm=d79474267a87f4d3d0548030c03886d2fe9ee4821614daa12c9fceaf82a5db90&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:30:38.375706Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202278390501396/snapshot.jpg?ex=6928365c&is=6926e4dc&hm=d79474267a87f4d3d0548030c03886d2fe9ee4821614daa12c9fceaf82a5db90&"
+    }
+  },
+  {
+    "id": "n-1764156628303",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:30:40.513836Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202291187454013/snapshot.jpg?ex=6928365f&is=6926e4df&hm=63c44f18701e2aaf5562e0902c96cab363c5dd414e70749660f695a8892dcdac&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:30:40.513836Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202291187454013/snapshot.jpg?ex=6928365f&is=6926e4df&hm=63c44f18701e2aaf5562e0902c96cab363c5dd414e70749660f695a8892dcdac&"
+    }
+  },
+  {
+    "id": "n-1764156633628",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:30:45.842695Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202314080092220/snapshot.jpg?ex=69283665&is=6926e4e5&hm=0a29100c659b366b8537b99bbcd0f0f8b6379a247173ac0bea41adb64434ced8&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:30:45.842695Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202314080092220/snapshot.jpg?ex=69283665&is=6926e4e5&hm=0a29100c659b366b8537b99bbcd0f0f8b6379a247173ac0bea41adb64434ced8&"
+    }
+  },
+  {
+    "id": "n-1764156638455",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:30:50.652303Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202334556553309/snapshot.jpg?ex=69283669&is=6926e4e9&hm=4b0732638386c93d123b4dfe88e6e8c5ed92cb65f57d570aad731120e34f45e4&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:30:50.652303Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443202334556553309/snapshot.jpg?ex=69283669&is=6926e4e9&hm=4b0732638386c93d123b4dfe88e6e8c5ed92cb65f57d570aad731120e34f45e4&"
+    }
+  },
+  {
+    "id": "n-1764156998818",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:36:51.007558Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:36:51.007558Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157009148",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:37:01.354351Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:37:01.354351Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157019526",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:37:11.732069Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:37:11.732069Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157029897",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:37:22.101192Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:37:22.101192Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157040202",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:37:32.406950Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:37:32.406950Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157050612",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:37:42.702032Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:37:42.702032Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157060992",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:37:53.196881Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:37:53.196881Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157071407",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:38:03.580154Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:38:03.580154Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157081673",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:38:13.875500Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:38:13.875500Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157091995",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:38:24.199335Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:38:24.199335Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157102398",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:38:34.578154Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:38:34.578154Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157112895",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:38:44.881392Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:38:44.881392Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157120445",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:38:52.648593Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443204353421869078/snapshot.jpg?ex=6928384b&is=6926e6cb&hm=2502642e44db0ccfac3e79967d1b71566c89aacbc3438c1d8b985cf666766589&",
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:38:52.648593Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443204353421869078/snapshot.jpg?ex=6928384b&is=6926e6cb&hm=2502642e44db0ccfac3e79967d1b71566c89aacbc3438c1d8b985cf666766589&"
+    }
+  },
+  {
+    "id": "n-1764157123311",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:38:55.473857Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:38:55.473857Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157133629",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:39:05.831538Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:39:05.831538Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157143895",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:39:16.096363Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:39:16.096363Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157154244",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:39:26.402027Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:39:26.402027Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157164560",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:39:36.764749Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:39:36.764749Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157174864",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:39:47.069740Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:39:47.069740Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157185147",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:39:57.340165Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:39:57.340165Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157195409",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:40:07.614448Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:40:07.614448Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157205775",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:40:17.968747Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:40:17.968747Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157216107",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:40:28.303081Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:40:28.303081Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157226422",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:40:38.623050Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:40:38.623050Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157236750",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:40:48.927973Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:40:48.927973Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157247014",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:40:59.213831Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:40:59.213831Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157257370",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:41:09.569842Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:41:09.569842Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157267634",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:41:19.833605Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:41:19.833605Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157277942",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:41:30.142572Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:41:30.142572Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157288331",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:41:40.531375Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:41:40.531375Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157298752",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:41:50.952343Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:41:50.952343Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157309106",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:42:01.283041Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:42:01.283041Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157319498",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:42:11.674520Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:42:11.674520Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157329886",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:42:22.088253Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:42:22.088253Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157340223",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:42:32.425626Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:42:32.425626Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157350522",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:42:42.700468Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:42:42.700468Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157360860",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:42:53.047054Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:42:53.047054Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157371247",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:43:03.451069Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:43:03.451069Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157381571",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:43:13.773048Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:43:13.773048Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157391908",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:43:24.114807Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:43:24.114807Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157402241",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:43:34.445397Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:43:34.445397Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157412599",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:43:44.792235Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:43:44.792235Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157423088",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:43:55.150532Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:43:55.150532Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157433685",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:44:05.569393Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:44:05.569393Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157444065",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:44:16.243631Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:44:16.243631Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157454418",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:44:26.609761Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:44:26.609761Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157464721",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:44:36.899551Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:44:36.899551Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157474996",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:44:47.195135Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:44:47.195135Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157485371",
+    "event": "sensor_update",
+    "timestamp": "2025-11-26T11:44:57.571632Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "sensor_update",
+      "timestamp": "2025-11-26T11:44:57.571632Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": null
+    }
+  },
+  {
+    "id": "n-1764157568811",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:46:21.020331Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:46:21.020331Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": ""
+    }
+  },
+  {
+    "id": "n-1764157838037",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:50:50.130282Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:50:50.130282Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": ""
+    }
+  },
+  {
+    "id": "n-1764158143437",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:55:55.609727Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:55:55.609727Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": ""
+    }
+  },
+  {
+    "id": "n-1764158149070",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:56:01.255453Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:56:01.255453Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": ""
+    }
+  },
+  {
+    "id": "n-1764158156377",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:56:08.373536Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:56:08.373536Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": ""
+    }
+  },
+  {
+    "id": "n-1764158176250",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:56:28.427975Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:56:28.427975Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": ""
+    }
+  },
+  {
+    "id": "n-1764158182338",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:56:34.526003Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:56:34.526003Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": ""
+    }
+  },
+  {
+    "id": "n-1764158188389",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T11:56:40.583618Z",
+    "camera": "unknown",
+    "image_url": null,
+    "temperature": "0",
+    "humidity": "0",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T11:56:40.583618Z",
+      "temperature": "0",
+      "humidity": "0",
+      "image_url": ""
+    }
+  },
+  {
+    "id": "n-1764158483120",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T12:01:35.215507Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443210068479836271/snapshot.jpg?ex=69283d9d&is=6926ec1d&hm=5608efed5e08d207eb2d6e421bc6fb75c0e6247179df334ccefb7af99c48a4ab&",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T12:01:35.215507Z",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443210068479836271/snapshot.jpg?ex=69283d9d&is=6926ec1d&hm=5608efed5e08d207eb2d6e421bc6fb75c0e6247179df334ccefb7af99c48a4ab&"
+    }
+  },
+  {
+    "id": "n-1764158489945",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T12:01:42.053372Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443210096757702787/snapshot.jpg?ex=69283da4&is=6926ec24&hm=84f619f0c344891f22a59cb8d04cde2f1fbc56924318397922a94944d87cf8f1&",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T12:01:42.053372Z",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443210096757702787/snapshot.jpg?ex=69283da4&is=6926ec24&hm=84f619f0c344891f22a59cb8d04cde2f1fbc56924318397922a94944d87cf8f1&"
+    }
+  },
+  {
+    "id": "n-1764158495112",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T12:01:47.319522Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443210119738560592/snapshot.jpg?ex=69283daa&is=6926ec2a&hm=a9f75342373007fe124db880255d0de6181f1e781a950a8b17b2387778e81d11&",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T12:01:47.319522Z",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443210119738560592/snapshot.jpg?ex=69283daa&is=6926ec2a&hm=a9f75342373007fe124db880255d0de6181f1e781a950a8b17b2387778e81d11&"
+    }
+  },
+  {
+    "id": "n-1764158697595",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T12:05:09.551481Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443210967637819463/snapshot.jpg?ex=69283e74&is=6926ecf4&hm=78e14cd1fe36c83342cf16a36866a9e6b03955b90a6f90a3349f5162b43fbe8e&",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T12:05:09.551481Z",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443210967637819463/snapshot.jpg?ex=69283e74&is=6926ecf4&hm=78e14cd1fe36c83342cf16a36866a9e6b03955b90a6f90a3349f5162b43fbe8e&"
+    }
+  },
+  {
+    "id": "n-1764158701781",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T12:05:13.973771Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443210986604728472/snapshot.jpg?ex=69283e78&is=6926ecf8&hm=97a686f041525cd234de0e193d32da654b34180493efdffa64d9eecbaae5356a&",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T12:05:13.973771Z",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443210986604728472/snapshot.jpg?ex=69283e78&is=6926ecf8&hm=97a686f041525cd234de0e193d32da654b34180493efdffa64d9eecbaae5356a&"
+    }
+  },
+  {
+    "id": "n-1764158707167",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T12:05:19.301371Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443211008398065760/snapshot.jpg?ex=69283e7d&is=6926ecfd&hm=c4d29b017c3eaad3614a7b958155f2a8a97252c758dcde9c1b8814e35f913fd5&",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T12:05:19.301371Z",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443211008398065760/snapshot.jpg?ex=69283e7d&is=6926ecfd&hm=c4d29b017c3eaad3614a7b958155f2a8a97252c758dcde9c1b8814e35f913fd5&"
+    }
+  },
+  {
+    "id": "n-1764158712223",
+    "event": "person_detected",
+    "timestamp": "2025-11-26T12:05:24.420450Z",
+    "camera": "unknown",
+    "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443211030523154537/snapshot.jpg?ex=69283e83&is=6926ed03&hm=35a9d8a88f747018b1d8f604b90540ad9403bf5151b16074bc831daeee074f69&",
+    "raw": {
+      "event": "person_detected",
+      "timestamp": "2025-11-26T12:05:24.420450Z",
+      "image_url": "https://cdn.discordapp.com/attachments/1443175529976041492/1443211030523154537/snapshot.jpg?ex=69283e83&is=6926ed03&hm=35a9d8a88f747018b1d8f604b90540ad9403bf5151b16074bc831daeee074f69&"
+    }
   }
 ]

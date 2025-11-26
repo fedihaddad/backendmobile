@@ -510,6 +510,61 @@ app.get('/api/sensors', (req, res) => {
 
 });
 
+// POST /api/sensors -> accept sensor-only updates from devices (e.g., Raspberry Pi)
+// Accepts JSON with fields: soilMoisture / soilHumidity / moisture, temperature / temp, humidity / h
+app.post('/api/sensors', (req, res) => {
+    try {
+        const payload = req.body || {};
+
+        // Normalize soil value
+        const soil = payload.soilMoisture !== undefined ? payload.soilMoisture : (payload.soilHumidity !== undefined ? payload.soilHumidity : (payload.moisture !== undefined ? payload.moisture : undefined));
+
+        // Normalize temperature/humidity
+        const temperature = payload.temperature !== undefined ? payload.temperature : (payload.temp !== undefined ? payload.temp : undefined);
+        const humidity = payload.humidity !== undefined ? payload.humidity : (payload.h !== undefined ? payload.h : undefined);
+
+        // Update sensorData if provided (treat 0 as valid)
+        if (soil !== undefined && soil !== null) {
+            const v = Number(soil);
+            sensorData.soilHumidity = {
+                value: isNaN(v) ? sensorData.soilHumidity.value : v,
+                timestamp: new Date(),
+                status: getStatus(isNaN(v) ? sensorData.soilHumidity.value : v, 'soil')
+            };
+        }
+
+        if (temperature !== undefined && temperature !== null && humidity !== undefined && humidity !== null) {
+            const t = Number(temperature);
+            const h = Number(humidity);
+            sensorData.dht22 = {
+                temperature: isNaN(t) ? sensorData.dht22.temperature : t,
+                humidity: isNaN(h) ? sensorData.dht22.humidity : h,
+                timestamp: new Date(),
+                status: getStatus(isNaN(t) ? sensorData.dht22.temperature : t, 'temp')
+            };
+        } else {
+            // If only one of temperature/humidity provided, update that value
+            if (temperature !== undefined && temperature !== null) {
+                const t = Number(temperature);
+                sensorData.dht22.temperature = isNaN(t) ? sensorData.dht22.temperature : t;
+                sensorData.dht22.timestamp = new Date();
+                sensorData.dht22.status = getStatus(sensorData.dht22.temperature, 'temp');
+            }
+            if (humidity !== undefined && humidity !== null) {
+                const h = Number(humidity);
+                sensorData.dht22.humidity = isNaN(h) ? sensorData.dht22.humidity : h;
+                sensorData.dht22.timestamp = new Date();
+            }
+        }
+
+        console.log('Received sensors POST:', payload);
+        return res.json({ success: true, data: sensorData });
+    } catch (e) {
+        console.error('Failed handling POST /api/sensors', e);
+        return res.status(500).json({ success: false, error: String(e) });
+    }
+});
+
 // 2. Get Pump Status (Frontend -> Backend)
 app.get('/api/pump/status', (req, res) => {
     res.json({
@@ -593,14 +648,55 @@ app.post('/api/notifications', (req, res) => {
         const camera = payload.camera || 'unknown';
         const image_url = payload.image_url || payload.imageUrl || payload.image || null;
 
+        // Extract sensor values if provided by sender (e.g., Raspberry Pi)
+        const temperature = payload.temperature !== undefined ? payload.temperature : (payload.temp !== undefined ? payload.temp : null);
+        const humidity = payload.humidity !== undefined ? payload.humidity : (payload.h !== undefined ? payload.h : null);
+        // accept several possible soil moisture keys
+        const soil = payload.soilMoisture !== undefined ? payload.soilMoisture : (payload.soilHumidity !== undefined ? payload.soilHumidity : (payload.moisture !== undefined ? payload.moisture : null));
+
+        // If notification carries sensor readings, update the global sensor snapshot
+        try {
+            if (soil !== null && soil !== undefined) {
+                const v = Number(soil);
+                sensorData.soilHumidity = {
+                    value: isNaN(v) ? sensorData.soilHumidity.value : v,
+                    timestamp: new Date(),
+                    status: getStatus(isNaN(v) ? sensorData.soilHumidity.value : v, 'soil')
+                };
+            }
+            if (temperature !== null && temperature !== undefined && humidity !== null && humidity !== undefined) {
+                const t = Number(temperature);
+                const h = Number(humidity);
+                sensorData.dht22 = {
+                    temperature: isNaN(t) ? sensorData.dht22.temperature : t,
+                    humidity: isNaN(h) ? sensorData.dht22.humidity : h,
+                    timestamp: new Date(),
+                    status: getStatus(isNaN(t) ? sensorData.dht22.temperature : t, 'temp')
+                };
+            }
+        } catch (e) {
+            console.warn('Failed to update sensorData from notification payload', e);
+        }
+
         const note = {
             id: `n-${Date.now()}`,
             event,
             timestamp,
             camera,
             image_url,
+            // top-level sensor fields for easier frontend display/search
+            temperature: temperature !== null ? temperature : undefined,
+            humidity: humidity !== null ? humidity : undefined,
             raw: payload
         };
+
+        // If this payload is sensor-only (no image and not a person_detected event),
+        // update sensors (already done above) and return without creating a notification.
+        const isSensorOnly = (!image_url) && (String(event).toLowerCase() !== 'person_detected');
+        if (isSensorOnly) {
+            console.log('Received sensor-only POST to /api/notifications; not saving as a notification.');
+            return res.json({ success: true, message: 'Sensor update only', data: note });
+        }
 
         // keep history bounded
         notifications.push(note);
@@ -608,10 +704,9 @@ app.post('/api/notifications', (req, res) => {
         if (notifications.length > MAX_HISTORY) notifications = notifications.slice(-MAX_HISTORY);
         saveNotifications();
 
-        // Broadcast to SSE clients (clean broken connections first)
+        // Broadcast to SSE clients (clean broken/closed clients first)
         try {
             const msg = JSON.stringify(note);
-            // remove finished/closed clients
             sseClients = sseClients.filter((client) => !client.finished && !client.destroyed && client.writable);
             sseClients.forEach((client) => {
                 try {
@@ -1001,6 +1096,57 @@ app.post('/api/discord/fetch', async (req, res) => {
             const timestamp = msg.timestamp || new Date().toISOString();
             const event = msg.content || 'discord_webhook';
 
+            // Try to parse sensor values from the message content or embeds (e.g. "Temperature: 0°C", "Humidity: 0%")
+            let parsedTemp = null;
+            let parsedHum = null;
+            let parsedSoil = null;
+            try {
+                if (msg.content && typeof msg.content === 'string') {
+                    const tmatch = msg.content.match(/temperature[:\s]*([+-]?\d+(?:\.\d+)?)/i);
+                    const hmatch = msg.content.match(/humidity[:\s]*([+-]?\d+(?:\.\d+)?)/i);
+                    const smatch = msg.content.match(/soil(?:\s|_|-)??(?:moisture|humidity|level)[:\s]*([+-]?\d+(?:\.\d+)?)/i);
+                    if (tmatch) parsedTemp = Number(tmatch[1]);
+                    if (hmatch) parsedHum = Number(hmatch[1]);
+                    if (smatch) parsedSoil = Number(smatch[1]);
+                }
+
+                if ((parsedTemp === null || parsedHum === null || parsedSoil === null) && Array.isArray(msg.embeds)) {
+                    for (const e of msg.embeds) {
+                        // check description
+                        if (e && typeof e.description === 'string') {
+                            const tmatch = e.description.match(/temperature[:\s]*([+-]?\d+(?:\.\d+)?)/i);
+                            const hmatch = e.description.match(/humidity[:\s]*([+-]?\d+(?:\.\d+)?)/i);
+                            const smatch = e.description.match(/soil(?:\s|_|-)??(?:moisture|humidity|level)[:\s]*([+-]?\d+(?:\.\d+)?)/i);
+                            if (tmatch && parsedTemp === null) parsedTemp = Number(tmatch[1]);
+                            if (hmatch && parsedHum === null) parsedHum = Number(hmatch[1]);
+                            if (smatch && parsedSoil === null) parsedSoil = Number(smatch[1]);
+                        }
+                        // check fields
+                        if (e && Array.isArray(e.fields)) {
+                            for (const f of e.fields) {
+                                if (!f || !f.name || !f.value) continue;
+                                const name = String(f.name).toLowerCase();
+                                const val = String(f.value);
+                                if (name.includes('temp') && parsedTemp === null) {
+                                    const m = val.match(/([+-]?\d+(?:\.\d+)?)/);
+                                    if (m) parsedTemp = Number(m[1]);
+                                }
+                                if (name.includes('hum') && parsedHum === null) {
+                                    const m = val.match(/([+-]?\d+(?:\.\d+)?)/);
+                                    if (m) parsedHum = Number(m[1]);
+                                }
+                                if ((name.includes('soil') || name.includes('moist')) && parsedSoil === null) {
+                                    const m = val.match(/([+-]?\d+(?:\.\d+)?)/);
+                                    if (m) parsedSoil = Number(m[1]);
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch (e) {
+                // ignore parse errors
+            }
+
             // avoid duplicate by checking image_url already exists
             const exists = notifications.find(n => n.image_url === image_url);
             if (exists) continue;
@@ -1011,8 +1157,33 @@ app.post('/api/discord/fetch', async (req, res) => {
                 timestamp,
                 camera: 'discord_webhook',
                 image_url,
+                // if we parsed sensor values, include them as top-level properties so frontend can read them
+                temperature: parsedTemp !== null ? parsedTemp : undefined,
+                humidity: parsedHum !== null ? parsedHum : undefined,
+                soilHumidity: parsedSoil !== null ? parsedSoil : undefined,
                 raw: { discord: msg }
             };
+            // If we detected sensor values, also update the live sensor snapshot so /api/sensors reflects them
+            try {
+                if (parsedSoil !== null && parsedSoil !== undefined) {
+                    sensorData.soilHumidity = {
+                        value: Number(parsedSoil),
+                        timestamp: new Date(),
+                        status: getStatus(Number(parsedSoil), 'soil')
+                    };
+                }
+                if ((parsedTemp !== null && parsedTemp !== undefined) || (parsedHum !== null && parsedHum !== undefined)) {
+                    sensorData.dht22 = {
+                        temperature: parsedTemp !== null && parsedTemp !== undefined ? Number(parsedTemp) : (sensorData.dht22 ? sensorData.dht22.temperature : undefined),
+                        humidity: parsedHum !== null && parsedHum !== undefined ? Number(parsedHum) : (sensorData.dht22 ? sensorData.dht22.humidity : undefined),
+                        timestamp: new Date(),
+                        status: getStatus(parsedTemp !== null && parsedTemp !== undefined ? Number(parsedTemp) : (sensorData.dht22 ? sensorData.dht22.temperature : 0), 'temp')
+                    };
+                }
+            } catch (e) {
+                console.warn('Failed to update sensorData from discord import', e);
+            }
+
             notifications.push(note);
             imported.push(note);
         }
