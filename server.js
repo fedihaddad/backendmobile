@@ -480,6 +480,29 @@ app.post('/api/auth/remove-pin', authMiddleware, (req, res) => {
     }
 });
 
+// POST /api/auth/change-password { currentPassword, newPassword }
+app.post('/api/auth/change-password', authMiddleware, async (req, res) => {
+    try {
+        const { currentPassword, newPassword } = req.body || {};
+        if (!currentPassword || !newPassword) return res.status(400).json({ success: false, error: 'currentPassword and newPassword required' });
+        if (typeof newPassword !== 'string' || newPassword.length < 4) return res.status(400).json({ success: false, error: 'newPassword must be at least 4 characters' });
+
+        const user = users.find(u => u.id === req.user.id);
+        if (!user) return res.status(404).json({ success: false, error: 'User not found' });
+
+        const ok = await bcrypt.compare(currentPassword, user.passwordHash);
+        if (!ok) return res.status(401).json({ success: false, error: 'Current password is incorrect' });
+
+        const hash = await bcrypt.hash(newPassword, 10);
+        user.passwordHash = hash;
+        saveUsers();
+        return res.json({ success: true });
+    } catch (e) {
+        console.error('change-password failed', e);
+        res.status(500).json({ success: false, error: 'Failed to change password' });
+    }
+});
+
 // POST /api/device-token { token }
 // Save a device push token (Expo push token) for the authenticated user
 app.post('/api/device-token', authMiddleware, (req, res) => {
