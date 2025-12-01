@@ -1,3 +1,5 @@
+require('dotenv').config();
+console.log('🔧 Environment loaded - Discord webhook:', process.env.DISCORD_CONTROL_WEBHOOK ? 'CONFIGURED ✅' : 'NOT SET ❌');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -43,11 +45,11 @@ function downloadFile(url, dest) {
             file.on('finish', () => file.close(resolve));
         });
         req.on('error', (err) => {
-            fs.unlink(dest, () => {});
+            fs.unlink(dest, () => { });
             reject(err);
         });
         file.on('error', (err) => {
-            fs.unlink(dest, () => {});
+            fs.unlink(dest, () => { });
             reject(err);
         });
     });
@@ -250,6 +252,32 @@ const SCHEDULES_FILE = path.join(__dirname, 'schedules.json');
 let schedules = [];
 let scheduleTimers = {}; // id -> timeout ids
 
+// Simple settings store (persisted)
+const SETTINGS_FILE = path.join(__dirname, 'settings.json');
+let settings = {};
+
+function loadSettings() {
+    try {
+        if (fs.existsSync(SETTINGS_FILE)) {
+            const raw = fs.readFileSync(SETTINGS_FILE, 'utf8');
+            settings = JSON.parse(raw) || {};
+        }
+    } catch (e) {
+        console.error('Failed to load settings:', e);
+        settings = {};
+    }
+}
+
+function saveSettings() {
+    try {
+        fs.writeFileSync(SETTINGS_FILE, JSON.stringify(settings, null, 2));
+    } catch (e) {
+        console.error('Failed to save settings:', e);
+    }
+}
+
+loadSettings();
+
 function loadSchedules() {
     try {
         if (fs.existsSync(SCHEDULES_FILE)) {
@@ -367,7 +395,7 @@ app.post('/api/auth/register', async (req, res) => {
         const exists = users.find(u => u.email === email.toLowerCase());
         if (exists) return res.status(409).json({ success: false, error: 'User already exists' });
         const passwordHash = await bcrypt.hash(password, 10);
-        const id = `u-${Date.now()}-${Math.random().toString(36).slice(2,8)}`;
+        const id = `u-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
         const user = { id, name: name || undefined, email: email.toLowerCase(), passwordHash };
         users.push(user);
         saveUsers();
@@ -594,7 +622,7 @@ app.get('/api/pump/status', (req, res) => {
         success: true,
         data: pumpStatus
     });
-    });
+});
 
 // 3. Control Pump (Frontend -> Backend)
 app.post('/api/pump', (req, res) => {
@@ -606,6 +634,8 @@ app.post('/api/pump', (req, res) => {
             pumpStatus.isRunning = true;
             pumpStatus.lastStarted = new Date();
             console.log('Pump started manually');
+            // notify configured Discord webhook about pump start
+            try { sendDiscordControl('PUMP_ON'); } catch (e) { console.error(e); }
         }
     } else if (action === 'stop') {
         if (pumpStatus.isRunning) {
@@ -615,6 +645,8 @@ app.post('/api/pump', (req, res) => {
             const runtime = (pumpStatus.lastStopped - pumpStatus.lastStarted) / 1000 / 60; // minutes
             pumpStatus.totalRuntime += runtime;
             console.log('Pump stopped manually');
+            // notify configured Discord webhook about pump stop
+            try { sendDiscordControl('PUMP_OFF'); } catch (e) { console.error(e); }
         }
     } else {
         return res.status(400).json({ success: false, error: 'Invalid action' });
@@ -624,6 +656,75 @@ app.post('/api/pump', (req, res) => {
         success: true,
         data: pumpStatus
     });
+});
+
+// Helper: send a simple control message to a configured Discord webhook (if present)
+async function sendDiscordControl(command) {
+    try {
+        const webhook = settings.discordControlWebhook || process.env.DISCORD_CONTROL_WEBHOOK;
+        console.log('🔍 Discord webhook URL:', webhook ? 'Found' : 'NOT FOUND');
+        console.log('🔍 Attempting to send command:', command);
+        if (!webhook) {
+            console.log('❌ No Discord webhook configured - skipping');
+            return;
+        }
+
+        const payload = JSON.stringify({ content: `BOT_COMMAND: ${command}` });
+
+        const u = new URL(webhook);
+        const client = u.protocol === 'https:' ? https : http;
+
+        const options = {
+            hostname: u.hostname,
+            port: u.port || (u.protocol === 'https:' ? 443 : 80),
+            path: u.pathname + (u.search || ''),
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Content-Length': Buffer.byteLength(payload),
+            },
+        };
+
+        const req = client.request(options, (resp) => {
+            let data = '';
+            resp.on('data', (chunk) => (data += chunk));
+            resp.on('end', () => {
+                // Discord returns 204 No Content on success for webhooks
+                console.log('Discord webhook response', resp.statusCode);
+            });
+        });
+        req.on('error', (err) => {
+            console.error('Failed to send Discord control webhook:', err && err.stack ? err.stack : err);
+        });
+        req.write(payload);
+        req.end();
+    } catch (e) {
+        console.error('sendDiscordControl error', e && e.stack ? e.stack : e);
+    }
+}
+
+// Authenticated endpoint to set the Discord control webhook URL (stores in settings.json)
+app.post('/api/settings/discord-webhook', authMiddleware, (req, res) => {
+    try {
+        const { webhook } = req.body || {};
+        if (!webhook || typeof webhook !== 'string') return res.status(400).json({ success: false, error: 'webhook (string) required' });
+        settings.discordControlWebhook = webhook;
+        saveSettings();
+        return res.json({ success: true, data: { webhook } });
+    } catch (e) {
+        console.error('Failed to save discord webhook setting', e);
+        res.status(500).json({ success: false, error: 'Failed to save setting' });
+    }
+});
+
+// GET /api/settings -> return persisted settings (authenticated)
+app.get('/api/settings', authMiddleware, (req, res) => {
+    try {
+        return res.json({ success: true, data: settings });
+    } catch (e) {
+        console.error('Failed to read settings', e);
+        res.status(500).json({ success: false, error: 'Failed to read settings' });
+    }
 });
 
 // --- IoT Device Endpoints (ESP32 -> Backend) ---
@@ -848,7 +949,7 @@ app.get('/api/model/status', async (req, res) => {
                 try {
                     const result = spawnSync(cmd, ['--version'], { encoding: 'utf8' });
                     if (result.status === 0) return cmd;
-                } catch (e) {}
+                } catch (e) { }
             }
             return null;
         }
@@ -900,7 +1001,7 @@ app.get('/api/analyze/sample', (req, res) => {
             try {
                 const result = spawnSync(cmd, ['--version']);
                 if (result.status === 0) return cmd;
-            } catch (e) {}
+            } catch (e) { }
         }
         return null;
     }
@@ -939,7 +1040,7 @@ app.get('/api/analyze/sample', (req, res) => {
 
 // Simple HTML test form to exercise the /api/analyze POST endpoint from a browser
 app.get('/analyze/test', (req, res) => {
-        const html = `<!doctype html>
+    const html = `<!doctype html>
 <html>
     <head><meta charset="utf-8"><title>Analyze Test</title></head>
     <body>
@@ -951,8 +1052,8 @@ app.get('/analyze/test', (req, res) => {
         <p>Response will appear as JSON in the browser or download prompt.</p>
     </body>
 </html>`;
-        res.setHeader('Content-Type', 'text/html');
-        res.status(200).send(html);
+    res.setHeader('Content-Type', 'text/html');
+    res.status(200).send(html);
 });
 
 // Simple notifications UI for local testing
@@ -995,7 +1096,7 @@ app.post('/api/analyze', upload.single('image'), (req, res) => {
     if (!pythonCmd) {
         // Optionally clean up uploaded file
         if (!KEEP_UPLOADS) {
-            try { fs.unlinkSync(imagePath); } catch (e) {}
+            try { fs.unlinkSync(imagePath); } catch (e) { }
         } else {
             console.log('Keeping uploaded file for debugging:', imagePath);
         }
@@ -1023,7 +1124,7 @@ app.post('/api/analyze', upload.single('image'), (req, res) => {
     pythonProcess.on('close', (code) => {
         // Optionally clean up uploaded file
         if (!KEEP_UPLOADS) {
-            try { fs.unlinkSync(imagePath); } catch (e) {}
+            try { fs.unlinkSync(imagePath); } catch (e) { }
         } else {
             console.log('Keeping uploaded file for debugging:', imagePath);
         }
@@ -1175,7 +1276,7 @@ app.post('/api/discord/fetch', async (req, res) => {
             if (exists) continue;
 
             const note = {
-                id: `d-${Date.now()}-${Math.random().toString(36).slice(2,8)}`,
+                id: `d-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
                 event,
                 timestamp,
                 camera: 'discord_webhook',
@@ -1221,7 +1322,7 @@ app.post('/api/discord/fetch', async (req, res) => {
             try {
                 const msg = JSON.stringify(note);
                 sseClients.forEach((client) => client.write(`data: ${msg}\n\n`));
-            } catch (e) {}
+            } catch (e) { }
         }
 
         res.json({ success: true, importedCount: imported.length, imported });
